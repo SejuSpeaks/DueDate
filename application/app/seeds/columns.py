@@ -5,7 +5,7 @@ from sqlalchemy.sql import text
 # Adds a demo user, you can add other users here if you want
 def seed_columns():
     column1 = BoardColumn(
-        board_id=1,name='Capstone')
+        board_id=1, name='Capstone')
 
     db.session.add(column1)
     db.session.commit()
@@ -21,6 +21,6 @@ def undo_columns():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute(text("DELETE FROM columns"))
+        db.session.execute(text("DELETE FROM board_columns"))
 
     db.session.commit()

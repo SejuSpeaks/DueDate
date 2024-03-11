@@ -5,7 +5,7 @@ from sqlalchemy.sql import text
 # Adds a demo user, you can add other users here if you want
 def seed_tasks():
     task1 = Task(
-        board_column=1,name='Backend', description='finish the boiler plate for server', status='Doing')
+        board_column_id=1,name='Backend', description='finish the boiler plate for server', status='Doing')
 
     db.session.add(task1)
     db.session.commit()
